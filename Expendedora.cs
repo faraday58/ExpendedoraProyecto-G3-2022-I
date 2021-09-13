@@ -2,7 +2,7 @@
 using System.Threading;
 namespace ExpendedoraProyecto_G3_2022_I
 {
-    class Expendedora
+    abstract class Expendedora
     {
 
         #region Atributos (Campos)
@@ -10,45 +10,70 @@ namespace ExpendedoraProyecto_G3_2022_I
         ushort cantProductos;
         byte temperatura;
         float precio;
+
+
         #endregion
+
+
+        #region Propiedades
+        public byte Temperatura { 
+            get => temperatura;
+            set
+            {
+                if(  value < 14  || value > 20  )
+                {
+                    temperatura = 14;
+                }
+                else
+                {
+                    temperatura = value;
+                }
+                
+            }
+        }
+
+        public string Marca { get => marca; set => marca = value; }
+        public ushort CantProductos { get => cantProductos; set => cantProductos = value; }
+        public float Precio { get => precio; set => precio = value; }
+        #endregion
+
 
         public Expendedora()
         {
-            marca = "AMS";
-            cantProductos = 430;
-            temperatura = 14;
-            precio = 15;
-
-            Saludar();
-            TiempoDespliegue();
-            Console.WriteLine("Marca: {1}, CantProductos {0}", cantProductos,marca);
-            TiempoDespliegue();
-            Console.WriteLine("La temperatura interna es: {0} [°C]", temperatura);
-            TiempoDespliegue();
-            string codigo= MostrarCodigo();
-            TiempoDespliegue();
-            MostrarPrecio(codigo);
+          
         }
 
         public Expendedora(string marca)
         {
-            this.marca = marca;
+            this.Marca = marca;
             Saludar();
             TiempoDespliegue();
-            Console.WriteLine("Marca: {0}",this.marca);
+            Console.WriteLine("Marca: {0}",this.Marca);
         }
+
+        
+
 
         public Expendedora(ushort cantProductos)
         {
-            marca = "AMS";
-            this.cantProductos = cantProductos;
+            Marca = "AMS";
+            this.CantProductos = cantProductos;
             Saludar();
             TiempoDespliegue();
-            Console.WriteLine("Marca: {0} \n Cantidad de Productos: {1}", marca, this.cantProductos);
+            Console.WriteLine("Marca: {0} \n Cantidad de Productos: {1}", Marca, this.CantProductos);
 
         }
 
         #region Métodos
+
+        public void ElevarTemperatura()
+        {
+            Temperatura += 1;
+        }
+        public void MostrarTemperatura()
+        {
+            Console.WriteLine("Temperatura {0} [°C] ", Temperatura);
+        }
         public void Saludar()
         {
             Console.WriteLine("Bienvenido");
@@ -77,13 +102,13 @@ namespace ExpendedoraProyecto_G3_2022_I
             switch(codigo)
             {
                 case "1A":
-                    Console.WriteLine("Precio: ${0}",precio);
+                    Console.WriteLine("Precio: ${0}",Precio);
                     break;
                 case "2B":
-                    Console.WriteLine("Precio: ${0}", precio-2);
+                    Console.WriteLine("Precio: ${0}", Precio-2);
                     break;
                 case "3C":
-                    Console.WriteLine("Precio: ${0}", precio-5);
+                    Console.WriteLine("Precio: ${0}", Precio-5);
                     break;
                 default:
                     Console.WriteLine("Producto inexistente");
