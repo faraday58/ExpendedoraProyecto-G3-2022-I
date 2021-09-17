@@ -15,6 +15,14 @@ namespace ExpendedoraProyecto_G3_2022_I
 
         }
 
+        public override string MostrarCodigo()
+        {
+            string codigo;
+            Console.WriteLine("Ingrese el código: \n   1A) Expreso \n 2B) Latte   ");
+            codigo = Console.ReadLine();
+
+            return codigo ;
+        }
 
     }
 }

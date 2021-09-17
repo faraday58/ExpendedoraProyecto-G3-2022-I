@@ -32,7 +32,7 @@ namespace ExpendedoraProyecto_G3_2022_I
             }
         }
 
-        public string Marca { 
+        public virtual string Marca { 
             get => marca;
             set
             {
@@ -99,7 +99,7 @@ namespace ExpendedoraProyecto_G3_2022_I
         }
 
 
-        public string MostrarCodigo()
+        public virtual string MostrarCodigo()
         {
             //Variable local "codigo"
             string codigo;
