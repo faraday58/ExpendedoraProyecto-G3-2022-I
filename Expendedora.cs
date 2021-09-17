@@ -32,14 +32,29 @@ namespace ExpendedoraProyecto_G3_2022_I
             }
         }
 
-        public string Marca { get => marca; set => marca = value; }
-        public ushort CantProductos { get => cantProductos; set => cantProductos = value; }
+        public string Marca { 
+            get => marca;
+            set
+            {
+                if( value =="" )
+                {
+                    marca = "Oro";
+                }
+                else
+                {
+                    marca = value;
+                }
+                
+            }
+        }        
         public float Precio { get => precio; set => precio = value; }
+        public ushort CantProductos { get => cantProductos; set => cantProductos = value; }
         #endregion
 
 
         public Expendedora()
         {
+            Saludar();
           
         }
 
@@ -49,9 +64,7 @@ namespace ExpendedoraProyecto_G3_2022_I
             Saludar();
             TiempoDespliegue();
             Console.WriteLine("Marca: {0}",this.Marca);
-        }
-
-        
+        }        
 
 
         public Expendedora(ushort cantProductos)

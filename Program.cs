@@ -25,7 +25,10 @@ namespace ExpendedoraProyecto_G3_2022_I
             */
 
             // Snack miExpendedora = new Snack();
-            Cafe miExpenCafe = new Cafe();
+
+            Console.WriteLine("Elige la marca de expendedora de Café");
+            string marca = Console.ReadLine();
+            Cafe miExpenCafe = new Cafe(marca);
 
             Console.ReadLine();
         }
