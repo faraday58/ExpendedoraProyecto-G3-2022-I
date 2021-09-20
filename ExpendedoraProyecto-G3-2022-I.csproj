@@ -40,6 +40,7 @@
     <Compile Include="Expendedora.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Refresco.cs" />
     <Compile Include="Snack.cs" />
   </ItemGroup>
   <ItemGroup>

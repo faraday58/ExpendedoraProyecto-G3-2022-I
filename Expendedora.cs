@@ -6,17 +6,17 @@ namespace ExpendedoraProyecto_G3_2022_I
     {
 
         #region Atributos (Campos)
-        string marca;
-        ushort cantProductos;
-        byte temperatura;
-        float precio;
+        private string marca;
+        private ushort cantProductos;
+        internal byte temperatura;
+        private float precio;
 
 
         #endregion
 
 
         #region Propiedades
-        public byte Temperatura { 
+        public virtual byte Temperatura { 
             get => temperatura;
             set
             {
@@ -54,8 +54,7 @@ namespace ExpendedoraProyecto_G3_2022_I
 
         public Expendedora()
         {
-            Saludar();
-          
+            Saludar();          
         }
 
         public Expendedora(string marca)
